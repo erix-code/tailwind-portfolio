@@ -41,7 +41,7 @@ module.exports = {
       }),
       textColor: {
         "primary": "#ffffff",
-        "secondary": "#ffffff",
+        "secondary": "#00BF63",
         "tertiary": "#000000"
       }
     },
