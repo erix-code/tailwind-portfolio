@@ -344,12 +344,12 @@
 </div>
 <div class="w-full px-6 pt-2 md:pt-16">
     <h2 class="text-2xl md:text-4xl pb-4 uppercase" id="contact">Contacto</h2>
-    <div class="w-full md:w-5/6 h-1.5 bg-primary mb-5"></div>
-    <div class="w-full flex justify-center mt-20">
-        <div class="bg-black-gray shadow-md  rounded-lg  pb-16 mb-12 lg:w-1/2 w-full ">
+    <div class="w-full md:w-5/6 h-1.5 bg-primary md:mb-5"></div>
+    <div class="w-full flex justify-center md:mt-20 mt-5">
+        <div class="bg-black-gray shadow-md  rounded-lg pb-16 mb-12 lg:w-1/2 w-full ">
             <img src="/public/img/erix/contact/Clover-Wallpaper-For-PC.jpg " class="w-full h-60 rounded-lg object-cover" alt="">
             <h2 class="uppercase font-bold text-3xl text-center pt-8">Contacta conmigo</h2>
-            <form  class="px-8 pt-6">
+            <form  class="px-8 pt-6" method="POST"  data-netlify="true">
                 <div class="mt-2">
                     <label class="block text-primary font-bold mb-2" for="full_name">
                         Nombre Completo
@@ -375,12 +375,12 @@
                     </label>
                     <textarea placeholder=" Hola Erick me gustaria que me ayudes en mi nueva pagina web." id="message" name="message"
                               rows="5"
-                              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                              class="px-3 py-2 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     ></textarea>
                 </div>
                 <div class="mt-2">
                     <button class="px-4 py-2 font-semibold text-sm bg-primary rounded-md shadow-sm hover:bg-primary-600 mt-4"
-                            name="sendContact" id="sendContact"
+                            name="sendContact" id="sendContact" type="submit"
                     >
                         Enviar
                     </button>
@@ -399,21 +399,3 @@
 </footer>
 </body>
 </html>
-<script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function(event) {
-        const currentYear = new Date().getUTCFullYear();
-        console.log(currentYear);
-        document.getElementById("current_year").textContent = currentYear;
-        // Your code to run since DOM is loaded and ready
-        const sendContact = document.querySelector("#sendContact");
-        const email = document.querySelector("#email");
-        const fullName = document.querySelector("#full_name");
-        const subject = document.querySelector("#subject");
-        const message = document.querySelector("#message");
-
-        console.log(sendContact);
-        sendContact.addEventListener("click", (event) => {
-            window.open(`mailto:erick.king.inc@gmail.com?subject=${subject}&body=${message}`);
-        });
-    });
-</script>
