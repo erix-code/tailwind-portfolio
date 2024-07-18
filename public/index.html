@@ -11,7 +11,7 @@
     <script src="/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
 </head>
 <body class="h-screen bg-black text-primary">
-<nav class="z-20 h-14 md:h-20 bg-primary flex justify-between items-center border-black border-0  border-spacing-1 w-full fixed">
+<header class="z-20 h-14 md:h-20 bg-primary flex justify-between items-center border-black border-0  border-spacing-1 w-full fixed">
     <a class="ml-5 my-1 text-md md:text-xl font-bold flex flex-row justify-center items-center shadow-black hover:text-shadow-lg transition ease-in-out delay-150 hover:scale-110"
        href="#welcome">
         <img src="/public/img/erix/White%20logo.png" alt="Logo Erix" class="w-10 h-10 md:w-14 md:h-14  mr-2">
@@ -27,7 +27,7 @@
         <a href="#contact"
            class="text-xl p-1 shadow-black hover:text-shadow-lg transition ease-in-out delay-150 hover:scale-110">Contacto</a>
     </div>
-</nav>
+</header>
 
 <div class="relative h-2/3 md:h-full pt-10 md:pt-20" id="welcome">
     <img class="w-full h-full object-cover opacity-60 " src="/public/img/erix/background.png" alt="Tech World">
@@ -388,12 +388,22 @@
             </form>
         </div>
     </div>
-
 </div>
+<footer class="h-16  bg-primary-900 flex justify-between items-center w-full p-2 md:p-10">
+    <div class="font-semibold">
+        &copy; Copyright <span id="current_year"></span> por Erick Marty Terrazas Zeballos
+    </div>
+    <div>
+        <img src="/public/img/erix/1.png" class="w-20" alt="">
+    </div>
+</footer>
 </body>
 </html>
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function(event) {
+        const currentYear = new Date().getUTCFullYear();
+        console.log(currentYear);
+        document.getElementById("current_year").textContent = currentYear;
         // Your code to run since DOM is loaded and ready
         const sendContact = document.querySelector("#sendContact");
         const email = document.querySelector("#email");
