@@ -11,13 +11,19 @@
     <script src="/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
 </head>
 <body class="h-screen bg-black text-primary">
-<header class="z-20 h-14 md:h-20 bg-primary flex justify-between items-center border-black border-0  border-spacing-1 w-full fixed">
+<header class="z-20 md:h-20 bg-primary flex justify-between items-center border-black border-0  border-spacing-1 w-full fixed">
     <a class="ml-5 my-1 text-md md:text-xl font-bold flex flex-row justify-center items-center shadow-black hover:text-shadow-lg transition ease-in-out delay-150 hover:scale-110"
        href="#welcome">
         <img src="/public/img/erix/White%20logo.png" alt="Logo Erix" class="w-10 h-10 md:w-14 md:h-14  mr-2">
         ERIX CODE
     </a>
-    <div class="hidden md:w-2/3 lg:w-1/2  md:flex justify-around text-lg pr-3 uppercase font-bold">
+    <div class="p-5 sm:hidden" onclick="showNavbar()">
+        <button>
+            <i class="fa-solid fa-bars text-2xl" id="icon_bars"></i>
+            <i class="fa-solid fa-x text-2xl hidden" id="icon_x"></i>
+        </button>
+    </div>
+    <div class="hidden md:w-2/3 lg:w-1/2  md:flex justify-around text-lg pr-3 uppercase font-bold" >
         <a href="#about-me"
            class="text-xl p-1 shadow-black hover:text-shadow-lg transition ease-in-out delay-150 hover:scale-110 focus:scale-110 focus:text-shadow-lg">Conoceme</a>
         <a href="#expertise"
@@ -28,6 +34,16 @@
            class="text-xl p-1 shadow-black hover:text-shadow-lg transition ease-in-out delay-150 hover:scale-110">Contacto</a>
     </div>
 </header>
+<div class="hidden md:hidden bg-primary fixed z-10 w-full h-2/5  flex flex-col justify-around items-center  text-lg pr-3 uppercase font-bold pt-16 pl-5" id="navbar_options">
+    <a href="#about-me"
+       class="text-lg p-1 shadow-black hover:text-shadow-lg transition ease-in-out delay-150 hover:scale-110 focus:scale-110 focus:text-shadow-lg">Conoceme</a>
+    <a href="#expertise"
+       class="text-lg p-1 shadow-black hover:text-shadow-lg transition ease-in-out delay-150 hover:scale-110">Experiencia</a>
+    <a href="#projects"
+       class="text-lg p-1 shadow-black hover:text-shadow-lg transition ease-in-out delay-150 hover:scale-110">Proyectos</a>
+    <a href="#contact"
+       class="text-lg p-1 shadow-black hover:text-shadow-lg transition ease-in-out delay-150 hover:scale-110">Contacto</a>
+</div>
 
 <div class="relative h-2/3 md:h-full pt-10 md:pt-20" id="welcome">
     <img class="w-full h-full object-cover opacity-60 " src="/public/img/erix/background.png" alt="Tech World">
@@ -399,3 +415,39 @@
 </footer>
 </body>
 </html>
+<script type="text/javascript">
+    let wasClicked = false;
+    const navbar = document.querySelector("#navbar_options");
+
+
+    function showNavbar() {
+        const iconBars = document.querySelector("#icon_bars");
+        const iconX = document.querySelector("#icon_x");
+        if (!wasClicked) {
+            navbar.classList.remove("hidden");
+            // Hide Icon Bar and Show Icon X
+            iconBars.style.display ="none";
+            iconX.style.display = "block";
+            // console.log(iconX);
+            wasClicked = true;
+            console.log(iconBars.style);
+        } else {
+            navbar.classList.add("hidden");
+
+            // Hide Icon X and Show Icon Bar
+            iconX.style.display ="none";
+            iconBars.style.display = "block";
+
+            wasClicked = false;
+            console.log(wasClicked);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        const currentYear = new Date().getUTCFullYear();
+
+        console.log(currentYear);
+        document.getElementById("current_year").textContent = currentYear;
+
+    });
+</script>
